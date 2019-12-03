@@ -90,9 +90,16 @@ public class AddAcountCNT : MonoBehaviour
         if (Name_SW == true && ID_SW == true && pass_SW == true && pass2_SW == true)
         {
             d.Start();
-            string cryptPass = AvoEx.AesEncryptor.Encrypt(UserPass.pass);
-            string sql = "INSERT INTO LOGIN VALUES(\'"+@ID+"\',\'"+@Name+"\',\'"+@cryptPass+"\');";
+            
+            string sql = "INSERT INTO LOGIN VALUES(@ID,@Name,@Pass);";
             MySqlCommand cmd = new MySqlCommand(sql, DAO.conn);
+            MySqlParameter pID = new MySqlParameter("@ID", ID);
+            cmd.Parameters.Add(pID);
+            MySqlParameter pName = new MySqlParameter("@Name", Name);
+            cmd.Parameters.Add(pName);
+            string cryptPass = AvoEx.AesEncryptor.Encrypt(pass);
+            MySqlParameter pPass = new MySqlParameter("@Pass", cryptPass);
+            cmd.Parameters.Add(pPass);
             cmd.ExecuteNonQuery();
             d.End();
             reary = true;

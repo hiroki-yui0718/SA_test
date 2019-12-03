@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using MySql.Data.MySqlClient;
 
 public class LoginCNT : MonoBehaviour
 {
@@ -12,19 +11,12 @@ public class LoginCNT : MonoBehaviour
     public bool addAcount;
     public bool ret;
     public bool reinput;
-    DAO d = new DAO();
+
 
 
     public void OnClickLogin()
     {
-        d.Start();
-        string sql = "SELECT PASSWORD FROM LOGIN WHERE ID = \'" + InputID.ID + "\';";
-        MySqlCommand cmd = new MySqlCommand(sql, DAO.conn);
-        MySqlDataReader rdr = cmd.ExecuteReader();
-        rdr.Read();
-        string decPass = rdr[0].ToString();
-        InputPass.AddPass = AvoEx.AesEncryptor.DecryptString(decPass);
-        d.End();
+ 
 
         if (InputPass.SW_check == true)
         {
@@ -65,11 +57,11 @@ public class LoginCNT : MonoBehaviour
     {
         if (login == true)
         {
-            if (InputID.SW == true && InputPass.SW == true)
+            if (InputPass.SW == true)
             {
                 SceneManager.LoadScene("SA_Acene");
             }
-            if (InputID.SW == false || InputPass.SW == false)
+            if (InputPass.SW == false)
             {
                 gameObject.SetActive(true);
             }

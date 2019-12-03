@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using MySql.Data.MySqlClient;
 
 
 public class InputPass : MonoBehaviour
@@ -11,19 +12,21 @@ public class InputPass : MonoBehaviour
     public Text check;
 
     public static string pass = null;
-    public static string AddPass;
+    public string AddPass;
 
     int len;
 
     public static bool SW;
     public static bool SW_check;
 
+    DAO d = new DAO();
+
     // Start is called before the first frame update
     void Start()
     {
         //check = GetComponent<Text>();
         inputField = GetComponent<InputField>(); 
-/*        AddPass = AddAcountCNT.pass;*/
+/*        AddPass = LoginCNT.AddPass;*/
         check.text = "";
         SW = false;
         SW_check = false;
@@ -33,6 +36,16 @@ public class InputPass : MonoBehaviour
     public void IunputPass()
     {
         pass = inputField.text;
+        d.Start();
+        string sql = "SELECT PASSWORD FROM LOGIN WHERE ID = @ID;";
+        MySqlCommand cmd = new MySqlCommand(sql, DAO.conn);
+        MySqlParameter pID = new MySqlParameter("@ID", InputID.ID);
+        cmd.Parameters.Add(pID);
+        MySqlDataReader rdr = cmd.ExecuteReader();
+        rdr.Read();
+        string decPass = rdr[0].ToString();
+        AddPass = AvoEx.AesEncryptor.DecryptString(decPass);
+        d.End();
 
     }
 
