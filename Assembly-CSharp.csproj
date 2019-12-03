@@ -11,7 +11,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6AA9D129-98EA-2173-BD8C-77917097CA63}</ProjectGuid>
+    <ProjectGuid>{68BEC2E9-B36D-E23C-1B06-06EDA4AC0C3C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -62,8 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AvoEx\AesEncryptor\AesEncryptor.cs" />
+    <Compile Include="Assets\AvoEx\AesEncryptor\Example\ExampleAesEncryptor.cs" />
+    <Compile Include="Assets\AvoEx\AesEncryptor\Example\ScriptSample.cs" />
     <Compile Include="Assets\Script\AceneCNT.cs" />
     <Compile Include="Assets\Script\Acount\AddAcountCNT.cs" />
+    <Compile Include="Assets\Script\Acount\DAO.cs" />
     <Compile Include="Assets\Script\Acount\InputID.cs" />
     <Compile Include="Assets\Script\Acount\InputPass.cs" />
     <Compile Include="Assets\Script\Acount\LoginCNT.cs" />
@@ -117,6 +121,7 @@
     <None Include="Assets\Image\UI\Text_Font\makinas4\仕様説明.txt" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\AvoEx\AesEncryptor\readme.txt" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
@@ -133,31 +138,31 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -336,23 +341,23 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
-    <Reference Include="Google.Protobuf">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Assets/Plugins/Google.Protobuf.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Assets/Plugins/BouncyCastle.Crypto.dll</HintPath>
     </Reference>
-    <Reference Include="SshNet.Security.Cryptography">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Assets/Plugins/SshNet.Security.Cryptography.dll</HintPath>
+    <Reference Include="Google.Protobuf">
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Assets/Plugins/Google.Protobuf.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Assets/Plugins/MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="BouncyCastle.Crypto">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Assets/Plugins/BouncyCastle.Crypto.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Assets/Plugins/MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="Renci.SshNet">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Assets/Plugins/Renci.SshNet.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Assets/Plugins/Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SshNet.Security.Cryptography">
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Assets/Plugins/SshNet.Security.Cryptography.dll</HintPath>
     </Reference>
     <Reference Include="System.Data">
-      <HintPath>C:/Users/173224/Desktop/unity/SA_test/Assets/Plugins/System.Data.dll</HintPath>
+      <HintPath>C:/Users/173224/Desktop/unity/Login Completion/Assets/Plugins/System.Data.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

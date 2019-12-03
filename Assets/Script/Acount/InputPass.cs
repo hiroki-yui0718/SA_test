@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class InputPass : MonoBehaviour
 {
     InputField inputField;
@@ -10,7 +11,7 @@ public class InputPass : MonoBehaviour
     public Text check;
 
     public static string pass = null;
-    public string AddPass;
+    public static string AddPass;
 
     int len;
 
@@ -21,8 +22,8 @@ public class InputPass : MonoBehaviour
     void Start()
     {
         //check = GetComponent<Text>();
-        inputField = GetComponent<InputField>();
-        AddPass = AddAcountCNT.pass;
+        inputField = GetComponent<InputField>(); 
+/*        AddPass = AddAcountCNT.pass;*/
         check.text = "";
         SW = false;
         SW_check = false;
@@ -32,6 +33,7 @@ public class InputPass : MonoBehaviour
     public void IunputPass()
     {
         pass = inputField.text;
+
     }
 
     // Update is called once per frame
@@ -51,14 +53,14 @@ public class InputPass : MonoBehaviour
 
         if (len >= 4 && pass != null)
         {
-            check.color = new Color(0.0f, 1.0f, 1.0f, 1.0f);
-            check.text = "認証可能なユーザーIDです";
+/*            check.color = new Color(0.0f, 1.0f, 1.0f, 1.0f);
+            check.text = "認証可能なユーザーIDです";*/
             SW_check = true;
         }
         else if (len < 4 && pass != null)
         {
-            check.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
-            check.text = "認証不可能なIDです";
+/*            check.color = new Color(1.0f, 0.0f, 0.0f, 1.0f);
+            check.text = "認証不可能なIDです";*/
             SW_check = false;
         }
     }

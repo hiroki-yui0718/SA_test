@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using MySql.Data.MySqlClient;
 
 public class AddAcountCNT : MonoBehaviour
 {
@@ -28,10 +29,13 @@ public class AddAcountCNT : MonoBehaviour
     public static int ID_len;
     public static int pass_len;
     public static int pass2_len;
+    DAO d = new DAO();
 
     // Start is called before the first frame update
     void Start()
     {
+
+
         gameObject.SetActive(false);
 
         Name_SW = false;
@@ -42,6 +46,8 @@ public class AddAcountCNT : MonoBehaviour
         reary = false;
         reary_ok = false;
         cancel = false;
+
+       
     }
 
     // Update is called once per frame
@@ -77,10 +83,18 @@ public class AddAcountCNT : MonoBehaviour
         }
     }
 
+ 
+
     public void Onclick_OK()
     {
         if (Name_SW == true && ID_SW == true && pass_SW == true && pass2_SW == true)
         {
+            d.Start();
+            string cryptPass = AvoEx.AesEncryptor.Encrypt(UserPass.pass);
+            string sql = "INSERT INTO LOGIN VALUES(\'"+@ID+"\',\'"+@Name+"\',\'"+@cryptPass+"\');";
+            MySqlCommand cmd = new MySqlCommand(sql, DAO.conn);
+            cmd.ExecuteNonQuery();
+            d.End();
             reary = true;
         }
     }
@@ -99,4 +113,6 @@ public class AddAcountCNT : MonoBehaviour
     {
         cancel = true;
     }
+
+
 }
